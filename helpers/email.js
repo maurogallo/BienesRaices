@@ -2,11 +2,11 @@ import nodemailer from 'nodemailer'
 
 const emailRegistro = async (datos) => {
     var transport = nodemailer.createTransport({
-        host: "sandbox.smtp.mailtrap.io",
-        port: 2525,
+        host: process.env.EMAIL_HOST,
+        port: process.env.EMAIL_PORT,
         auth: {
-          user: "aa9bd3f444a9e3",
-          pass: "31680962706cc7"
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASS
         }
       });
 
@@ -34,11 +34,11 @@ const emailRegistro = async (datos) => {
 
 const emailOlvidePassword = async (datos) => {
   var transport = nodemailer.createTransport({
-      host: "sandbox.smtp.mailtrap.io",
-      port: 2525,
+      host: process.env.EMAIL_HOST,
+      port: process.env.EMAIL_PORT,
       auth: {
-        user: "aa9bd3f444a9e3",
-        pass: "31680962706cc7"
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
       }
     });
 
